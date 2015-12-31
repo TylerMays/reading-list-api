@@ -10,5 +10,4 @@ class ActiveSupport::TestCase
   def json(body)
     JSON.parse(body)
   end
-  # Add more helper methods to be used by all tests here...
 end
