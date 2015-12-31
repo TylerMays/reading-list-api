@@ -5,6 +5,6 @@ class BooksController < ApplicationController
     if rating = params[:rating]
       books = books.where(rating: rating)
     end
-    render json: books, status: 200
+    render json: books, status: :ok
   end
 end
