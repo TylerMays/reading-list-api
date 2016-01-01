@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+
   def index
     books = Book.all
 
@@ -6,5 +7,19 @@ class BooksController < ApplicationController
       books = books.where(rating: rating)
     end
     render json: books, status: :ok
+  end
+
+  def create
+    book = Book.new(book_params)
+
+    if book.save
+      render json: book,        status: :created, location: book
+    else
+      render json: book.errors, status: :unprocessable_entity
+    end
+  end
+
+  def book_params
+    params.require(:book).permit(:title, :rating)
   end
 end
