@@ -1,0 +1,2 @@
+# Reading List API
+This is the backend API for a Reading List application designed to integrate with an EmberJS frontend.  It is based off of Codeschool's Soup to Bits: Surviving API's with Rails screencast.
